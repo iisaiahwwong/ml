@@ -25,4 +25,12 @@ df.iloc[0]
 
 df.loc[['A', 'B'], ['W', 'Y']]
 
-df
+booldf = df > 0
+
+df[df > 0]
+
+df['W'] > 0
+
+df[df['W'] > 0]
+
+ df[df['W'] > 0][['X', 'Y']]
