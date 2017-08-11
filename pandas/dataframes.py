@@ -69,3 +69,7 @@ df = pd.DataFrame(randn(6,2), hier_index, ['A','B'])
 df.loc['G1'].loc[1]
 
 df.index.names = ['Groups', 'Num']
+
+df.loc['G2'].loc[2]['B']
+
+df.xs(1, level='Num')
