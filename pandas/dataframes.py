@@ -9,6 +9,8 @@ df = pd.DataFrame(randn(5,4),['A', 'B', 'C', 'D', 'E'],['W', 'X', 'Y', 'Z'])
 
 df['W']
 
+df
+
 df.W
 
 df[['W', 'Z']]
@@ -25,6 +27,8 @@ df.iloc[0]
 
 df.loc[['A', 'B'], ['W', 'Y']]
 
+
+# Dataset part 2
 booldf = df > 0
 
 df[df > 0]
@@ -33,4 +37,18 @@ df['W'] > 0
 
 df[df['W'] > 0]
 
- df[df['W'] > 0][['X', 'Y']]
+df[df['W'] > 0][['Y', 'X']]
+ 
+df[(df['W']> 0) & (df['Y'] > 1)]
+
+index = df.reset_index()
+
+new_index = 'CA NY WY OR '.split()
+
+df['States'] = new_index
+
+df.set_index('States')
+
+test_df = df
+
+test_df['W'].shape
