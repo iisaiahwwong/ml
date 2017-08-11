@@ -73,3 +73,4 @@ df.index.names = ['Groups', 'Num']
 df.loc['G2'].loc[2]['B']
 
 df.xs(1, level='Num')
+
