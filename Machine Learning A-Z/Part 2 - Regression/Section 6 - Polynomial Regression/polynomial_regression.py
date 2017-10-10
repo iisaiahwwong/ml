@@ -22,7 +22,28 @@ X_test = sc_X.transform(X_test)"""
 
 # Fitting Linear Regression to the dataset
 from sklearn.linear_model import LinearRegression
-lin_reg = LinearRegressor()
-lin_reg.fit()
+lin_reg = LinearRegression()
+lin_reg.fit(X, y)
 
 # Fitting Polynomial Regression to the dataset 
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(degree = 3)
+X_poly = poly_reg.fit_transform(X)
+lin_reg2 = LinearRegression()
+lin_reg2.fit(X_poly, y)
+
+# Visualising the linear regression results
+plt.scatter(X, y, color="red")
+plt.plot(X, lin_reg.predict(X))
+plt.show()
+
+# Visualising the polynomial Regression resuls
+plt.scatter(X, y, color="red")
+plt.plot(X, lin_reg2.predict(poly_reg.fit_transform(X)))
+plt.show()
+
+# Predicting a bew result with linear Regression
+lin_reg.predict(6.5)
+
+ # Predict a new result with Polynomial REgression
+ lin_reg2.predict(poly_reg.fit_transform(6.5))
